@@ -1,31 +1,39 @@
 "use client"
-import Navbar from '@/components/shared/Navbar'
+
 import React from 'react'
 import styled from 'styled-components'
+
+
 const Page = () => {
 
     return (
         <>
+            <Container>
+                <TextSec>
+                    <Heading>
+                        The best way
+                        <Br />
+                        to showcase
+                        <Br /> your project
+                    </Heading>
+                    <Para>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime saepe quo.
+                    </Para>
 
-            {/* <Container>
-                <InputDiv>
-                    <Label>
-                        Enter Name:
-                    </Label>
-                    <Input type='text' placeholder='Enter User Name'>
-                    </Input>
-                    <Label>
-                        Enter Email:
-                    </Label>
-                    <Input type='email' placeholder='Enter Email'>
-                    </Input>
-                    <Label>
-                        Enter Password:
-                    </Label>
-                    <Input type='password' placeholder='Enter Password'>
-                    </Input>
-                </InputDiv>
-            </Container> */}
+                    <ButtonSec>
+                        <Button1>
+                            Try For Free
+                        </Button1>
+                        <Button2>
+                            See how it works
+                        </Button2>
+
+                    </ButtonSec>
+                </TextSec>
+                <Image1 src='/Assets/Image1.svg' />
+
+
+            </Container>
 
         </>
     )
@@ -34,23 +42,65 @@ const Page = () => {
 export default Page
 
 const Container = styled.div`
-height: 400px;
-background-color: aliceblue;
 display: flex;
-flex-direction: column;
-width: 500px;
+flex-wrap: wrap;
+justify-content: space-around;
+
+
+`;
+const TextSec = styled.div`
+margin-left: 70px;
+margin-top: 110px;
+
+
+
+`;
+const Heading = styled.h1`
+font-weight: bolder;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+`;
+const Br = styled.br`
+`;
+const Para = styled.p`
+margin-top: 20px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+`;
+const Image1 = styled.img`
+    width: 450px;
+    height: 450px;
 `;
 
-const InputDiv = styled.div`
+const ButtonSec = styled.div`
+margin-top: 12px;
 display: flex;
-flex-direction: column;
-
+gap: 15px;
 `;
-
-const Label = styled.label`
-
-font-weight: bold;
-`;
-const Input = styled.input`
+const Button1 = styled.button`
+background-color: dodgerblue;
+color:white;
 height: 40px;
+width: 120px;
+font-weight: bold;
+border: none;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+&:hover {
+    background-color: #7aa9dc;
+  }
 `;
+const Button2 = styled.button`
+height: 40px;
+width: 135px;
+background-color: transparent;
+font-weight: bold;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+border: 0.5px solid black;
+&:hover {
+    background-color: dodgerblue;
+     color: white;
+     
+  }
+`;
+
+

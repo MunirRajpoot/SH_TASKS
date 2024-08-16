@@ -1,11 +1,16 @@
 import Image from "next/image";
 // import styles from "./page.module.css";
-import Page from "../components/pageSection/products/page"
+
+import StyledComponentsRegistry from "@/components/shared/Register";
 
 export default function Home() {
   return (
-   <>
- <Page/>
-   </>
+    <>
+      <StyledComponentsRegistry>
+        
+        {/* <Page /> */}
+      </StyledComponentsRegistry>
+
+    </>
   );
 }
