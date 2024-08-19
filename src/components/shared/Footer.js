@@ -57,7 +57,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterSec = styled.footer`
-margin-top: 30px;
+/* margin-top: 30px; */
 background-color: dodgerblue;
 color: aliceblue;
 height: 220px;

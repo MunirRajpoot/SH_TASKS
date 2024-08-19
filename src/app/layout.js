@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/Navbar";
 
 import "./style/global.css"
 import Footer from "@/components/shared/Footer";
+import StyledComponentsRegistry from "@/components/shared/Register";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,11 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-
-        {children}
-
-        <Footer />
+        <StyledComponentsRegistry>
+          <Navbar />
+          {children}
+        {/* <Footer /> */}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

@@ -1,13 +1,12 @@
-import React from 'react'
-import Page2 from '@/components/pageSection/pricing/Page2'
+import React from "react";
+import Page2 from "@/components/pageSection/pricing/Page2";
+import Page3 from "@/components/pageSection/blog/Page3";
 const page = () => {
-    return (
-        <>
+  return (
+    <>
+      <Page2 />
+    </>
+  );
+};
 
-            <Page2 />
-
-        </>
-    )
-}
-
-export default page
+export default page;
