@@ -117,13 +117,12 @@ background-image: url(/Assets/Backroundimage.jpg);
 const Main = styled.form`
   display: flex;
   flex-direction: column;
-  /* background-color: whitesmoke; */
   margin-top: 80px;
   margin-bottom: 20px;
   width: 400px;
   z-index: 2;
-backdrop-filter: blur(8px); /* Blurs the background behind the form */
-  background-color: rgba(255, 255, 255, 0.3); /* Adds a semi-transparent background */
+  backdrop-filter: blur(8px); /* Apply a blur effect to the background */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for the form */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

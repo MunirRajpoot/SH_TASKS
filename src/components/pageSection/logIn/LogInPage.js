@@ -85,33 +85,29 @@ export default LogInPage;
 const LoginPageSec = styled.div`
   /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
   background-image: url(/Assets/Backroundimage.jpg);
-  background-size: cover; /* Ensure the image covers the entire div */
+ background-size: cover; /* Ensure the image covers the entire div */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  
   display: flex;
   justify-content: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif";
   height: 100vh;
   z-index: 1;
 `;
 
 const Main = styled.form`
-  display: flex;
+   display: flex;
   flex-direction: column;
-
-  /* background-color: whitesmoke; */
   margin-top: 80px;
-  margin-bottom: 40px;
-  /* height: 500px; */
+  margin-bottom: 20px;
   width: 400px;
-
   z-index: 2;
-
-backdrop-filter: blur(8px); /* Blurs the background behind the form */
-background-color: rgba(255, 255, 255, 0.3); /* Adds a semi-transparent background */
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px); /* Apply a blur effect to the background */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 const Heading = styled.h1`
   margin-top: 40px;
