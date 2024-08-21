@@ -16,8 +16,8 @@ const Footer = () => {
                     <EmailSec>
                         <EmailDes>Lorem ipsum dolor, sit amet consectetuc lorem.</EmailDes>
                         <InputDiv>
-                            <Input type='text' placeholder='Your Email' />
-                            <Button>Subscribe</Button>
+                            <Input type='text' placeholder='Your Email' required />
+                            <Button type='submit'>Subscribe</Button>
                         </InputDiv>
                     </EmailSec>
 
@@ -58,9 +58,13 @@ export default Footer;
 
 const FooterSec = styled.footer`
 /* margin-top: 30px; */
-background-color: dodgerblue;
-color: aliceblue;
-height: 220px;
+/* background-color: #fffcf2; */
+/* color: aliceblue; */
+
+background-color: #333533;
+color: white;
+height: 250px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 `;
 const MainFooterDiv = styled.div`
 /* margin-top: 20px; */
@@ -75,19 +79,19 @@ margin-top: 30px;
 `;
 const Heading = styled.h1`
 font-weight: bold;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
 const FooterPara = styled.p`
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 
 `;
 const EmailSec = styled.div`
 margin-top: 80px;
 `;
 const EmailDes = styled.p`
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
-const InputDiv = styled.div`
+const InputDiv = styled.form`
 margin-top: 10px;
 display: flex;
 flex-wrap: wrap;
@@ -96,7 +100,7 @@ gap: 5px;
 const Input = styled.input`
 padding-left: 5px;
 outline: none;
-border:none ;
+border:1px solid whitesmoke ;
 width: 200px;
 `;
 const Button = styled.button`
@@ -106,7 +110,7 @@ background-color: coral;
 font-weight: bold;
 color: white;
 border: none;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
 
 const LinkSec = styled.div`
@@ -119,7 +123,7 @@ gap: 8px;
 margin-top: 10px;
 `;
 const HeadingLink = styled.h5`
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
 
 const Link1 = styled.div`
@@ -153,7 +157,7 @@ const ContactHead = styled.h5`
 `;
 const Contact = styled.p`
 margin-top: 6px;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
 
 const HorizontalLine = styled.hr`
@@ -169,16 +173,16 @@ justify-content: space-evenly;
 
 
 const CopyRight = styled.p`
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
 
 const TermsCondition = styled.a`
 color: white;
 text-decoration: none;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;
 const PrivacyPolicy = styled.a`
 color: white;
 text-decoration: none;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 `;

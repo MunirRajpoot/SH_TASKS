@@ -77,7 +77,7 @@ display: flex;
 gap: 15px;
 `;
 const Button1 = styled.button`
-background-color: dodgerblue;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
 color:white;
 height: 40px;
 width: 120px;
@@ -97,7 +97,8 @@ font-weight: bold;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 border: 0.5px solid black;
 &:hover {
-    background-color: dodgerblue;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    transition: ease-in-out;
      color: white;
      
   }

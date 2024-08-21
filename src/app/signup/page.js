@@ -1,10 +1,12 @@
-import SignUPPage from "@/components/pageSection/signUp/SignUPPage";
+ 
+
+import SignUpPage from "@/components/pageSection/signUp/SignUpPage";
 import React from "react";
 
 const Page = () => {
   return (
     <>
-      <SignUPPage/>
+    <SignUpPage/>
     </>
   );
 };
