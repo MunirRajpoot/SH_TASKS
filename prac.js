@@ -292,3 +292,94 @@ const FooterSection = styled.div``;
 
 // Summary
 // This code snippet manages pagination by calculating which cards to display based on the current page number and the number of cards per page. It uses array slicing to get the subset of cards to display and computes the total number of pages required.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const cards = [
+    {
+        id: 1,
+        title: "Is Instagram Threads Feature Dead? An Analysis in 2024",
+        img: "/Assets/Blog/image1.jpg",
+        description: "Against the rapidly changing backdrop of the social media environment, you would have expected the ‘Threads’ feature by Instagram to create a massive uproar. As you go through the digital space in 2024, one question must have crossed your mind: is Threads dead? This post analyzes the present condition of the Instagram messaging platform based…",
+    },
+
+    {
+        id: 2,
+        title: "Can Any App Truly Replace TikTok? Examining the Leading TikTok Alternatives",
+        img: "/Assets/Blog/image2.jpg",
+        description: "TikTok Alternative – TikTok has been a cultural phenomenon in the ever-evolving land of social media. However, with rising concerns about data privacy and geopolitics, you may look for alternatives. What attracted millions to TikTok was the unique blend of short-form video and going viral. With the increase in competition from TikTok, this void will be…",
+    },
+    {
+        id: 3,
+        title: "M2 vs M3 Chip: A Comparison of Performance",
+        img: "/Assets/Blog/image3.jpg",
+        description: "M2 vs M3 Chip : Want to upgrade your Apple device? You may find yourself weighing the merits of the M2 and M3 chips. These are the state-of-the-art processors from Apple, but what both of them can do in terms of performance is a whole different ballpark. But how do they stack up against each…",
+    },
+
+    {
+        id: 4,
+        title: "Rumors About the iPhone 17 Slim Design & Upgrades",
+        img: "/Assets/Blog/image4.jpg",
+        description: "With the next line of smartphone development, it is rumored that Apple will develop an extremely slim iPhone 17. Industry insiders and tech fans speculate how Apple will achieve such thinness while keeping the device functional. Though Apple is characteristically tight-lipped, leaks and expert analysis give an exciting view of what you may find in…",
+    },
+    {
+        id: 5,
+        title: "Canon EOS R5 Mark II: An Overview of Features",
+        img: "/Assets/Blog/image5.jpg",
+        description: "If you are a professional photographer, you are always searching for state-of-the-art gadgets that give way to letting your creativity shine through. The Canon R5 Mark II, a powerhouse camera, build upon its predecessor’s success with innovative features and upgraded capabilities. This next-generation model in Canon’s mirrorless lineup offers an unrivaled promise of revolutionizing your…",
+    },
+    {
+        id: 6,
+        title: "Pixel Tablet vs Samsung A9: A Side-by-Side Comparison",
+        img: "/Assets/Blog/image6.jpg",
+        description: "You are in the market for a tablet, one thought instantly comes across two direct competitors on almost any given list of devices available today: the Pixel Tablet and the Samsung A9. Each of these devices stands out for its extreme advancement toward reaching a point where it could let one bring his digital life…",
+    },
+    {
+        id: 7,
+        title: "The Wise Phone 2: Specs, Features, and More",
+        img: "/Assets/Blog/image7.jpg",
+        description: "Hi Techeez, Are you ready to meet the next evolution of mindful technology? Here comes Wise Phone 2, promising to revolutionize your relationship with your mobile device. This cutting-edge smartphone puts equal emphasis on digital wellbeing and powerful performance. The Wise Phone 2, with its innovative features and thoughtfully designed devices, aims to enable you…",
+    },
+    {
+        id: 8,
+        title: "A Guide to Using RCS on iPhone Devices",
+        img: "/Assets/Blog/image8.jpg",
+        description: "You must have encountered RCS, the next generation of messaging standards designed to replace SMS and MMS. However, do you know how to use RCS on your iPhone? Ultra-modern technology includes advanced messaging features like read receipts, typing indicators, and high-quality media sharing. In this article, We will walk you through enabling RCS on your…",
+    },
+    {
+        id: 9,
+        title: "Fragpunk Release Date: Details of the Upcoming Shooter Game",
+        img: "/Assets/Blog/image9.jpg",
+        description: "Fragpunk Release Date – You must have been waiting for Fragpunk, the world’s most-awaited shooter developed by Midnight Studios. Well, all the waiting will end since this game’s release date has been announced. Get ready to be thrown into a dark cyberpunk world where every decision will have its consequences. Next-gen graphics and next-level multiplayer…",
+    },
+    {
+        id: 10,
+        title: "A Guide to Using RCS on iPhone Devices",
+        img: "/Assets/Blog/image8.jpg",
+        description: "You must have encountered RCS, the next generation of messaging standards designed to replace SMS and MMS. However, do you know how to use RCS on your iPhone? Ultra-modern technology includes advanced messaging features like read receipts, typing indicators, and high-quality media sharing. In this article, We will walk you through enabling RCS on your…",
+    },
+    {
+        id: 11,
+        title: "Fragpunk Release Date: Details of the Upcoming Shooter Game",
+        img: "/Assets/Blog/image9.jpg",
+        description: "Fragpunk Release Date – You must have been waiting for Fragpunk, the world’s most-awaited shooter developed by Midnight Studios. Well, all the waiting will end since this game’s release date has been announced. Get ready to be thrown into a dark cyberpunk world where every decision will have its consequences. Next-gen graphics and next-level multiplayer…",
+    },
+];

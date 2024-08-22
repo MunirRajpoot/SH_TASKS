@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import * as React from 'react';
+import { useRouter } from "next/navigation";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,9 +10,12 @@ import { CardActionArea } from '@mui/material';
 import styled from 'styled-components';
 import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
+import { Description } from '@mui/icons-material';
 
 const Page3 = () => {
+    const router = useRouter();
     const [page, setPage] = useState(1);
+    const [selectedCard, setSelectedCard] = useState(null);
 
     const cards = [
         {
@@ -95,97 +99,128 @@ const Page3 = () => {
         setPage(value);
     };
 
+    const handleReadMoreClick = (card) => {
+        setSelectedCard(card);
+    };
+    const previousPage = () => {
+        setSelectedCard(null)
+    }
+
     return (
         <>
             <Container>
-                <Main>
-                    <Heading>Blog Page</Heading>
-                    <Paragraph>A blog, short for weblog, is a frequently updated web page used for personal commentary or business content</Paragraph>
-                </Main>
-                <CardSection>
-                    {currentCards.map((item, index) => (
-                        <Card key={item.id} sx={{ maxWidth: 350 }}>
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    height="160"
-                                    image={item.img}
-                                    alt={item.title}
-                                    sx={{
-                                        transition: "transform 0.3s ease-in-out",
-                                        "&:hover": {
-                                            transform: "scale(1.1)",
-                                        },
-                                    }}
+                {selectedCard ? (
+                    <ReadMoreSec>
+                        <ReviewButton>Reviews</ReviewButton>
+                        <HeadingDiv>
+                            <HeadingReadMore>{selectedCard.title}</HeadingReadMore>
+                            <HideLinkSection>
+                                <HideAuthorLink>
+                                    <HideAuthorIcon src='\Assets\BlogIcons\Author.png' />
+                                    <HideAuthLink href='#'>Author</HideAuthLink>
+                                </HideAuthorLink>
+                                <HideClockLink>
+                                    <HideClockIcon src='\Assets\BlogIcons\clock.svg' />
+                                    <HideCLink href='#'>7 Hours Ago</HideCLink>
+                                </HideClockLink>
+                                <HideCommentLink>
+                                    <HideCommentIcon src='\Assets\BlogIcons\comment.svg' />
+                                    <HideComLink href='#'>Message</HideComLink>
+                                </HideCommentLink>
+                            </HideLinkSection>
+                        </HeadingDiv>
+
+                        <ReadImgDiv>
+                            <HideSecImg src={selectedCard.img} />
+                        </ReadImgDiv>
+
+                        <DescriptionDiv>
+                            <DesHeading>{selectedCard.title}</DesHeading>
+                            <DesPara>{selectedCard.description}</DesPara>
+                        </DescriptionDiv>
+
+                        <BackButtonDiv>
+
+                            <BackButton onClick={previousPage}>Previous Page</BackButton>
+                        </BackButtonDiv>
+                    </ReadMoreSec>
+                ) : (
+                    <>
+                        <CardSection>
+                            {currentCards.map((item) => (
+                                <Card key={item.id} sx={{ maxWidth: 350 }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="160"
+                                            image={item.img}
+                                            alt={item.title}
+                                            sx={{
+                                                transition: "transform 0.3s ease-in-out",
+                                                "&:hover": {
+                                                    transform: "scale(1.1)",
+                                                },
+                                            }}
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h6" component="div">
+                                                {item.title}
+                                            </Typography>
+                                            <LinkSection>
+                                                <AuthorLink>
+                                                    <AuthorIcon src='\Assets\BlogIcons\Author.png' />
+                                                    <AuthLink href='#'>Author</AuthLink>
+                                                </AuthorLink>
+                                                <ClockLink>
+                                                    <ClockIcon src='\Assets\BlogIcons\clock.svg' />
+                                                    <CLink href='#'>7 Hours Ago</CLink>
+                                                </ClockLink>
+                                                <CommentLink>
+                                                    <CommentIcon src='\Assets\BlogIcons\comment.svg' />
+                                                    <ComLink href='#'>Message</ComLink>
+                                                </CommentLink>
+                                            </LinkSection>
+                                           <CardDesDiv>
+                                           <Typography  variant="body2" color="text.secondary" sx={{ marginTop: "10px" }}>
+                                                {item.description}
+                                            </Typography>
+                                           </CardDesDiv>
+                                        </CardContent>
+                                    </CardActionArea>
+                                    <ReadButtonDiv>
+                                        <ReadButton onClick={() => handleReadMoreClick(item)}>Read More
+                                            <ReadIcon src='\Assets\BlogIcons\right.png' />
+                                        </ReadButton>
+                                    </ReadButtonDiv>
+                                </Card>
+                            ))}
+                        </CardSection>
+                        <PaginationSec>
+                            <Stack spacing={2}>
+                                <Pagination
+                                    onChange={handlePageChange}
+                                    count={totalPages}
+                                    page={page}
+                                    variant="outlined"
+                                    color="primary"
                                 />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h6" component="div">
-                                        {item.title}
-                                    </Typography>
-                                    <LinkSection>
-                                        <AuthorLink>
-                                            <AuthorIcon src='\Assets\BlogIcons\Author.png' />
-                                            <AuthLink href='#'>Author</AuthLink>
-                                        </AuthorLink>
-                                        <ClockLink>
-                                            <ClockIcon src='\Assets\BlogIcons\clock.svg' />
-                                            <CLink href='#'>7 Hours Ago</CLink>
-                                        </ClockLink>
-                                        <CommentLink>
-                                            <CommentIcon src='\Assets\BlogIcons\comment.svg' />
-                                            <ComLink href='#'>Message</ComLink>
-                                        </CommentLink>
-                                    </LinkSection>
-                                    <Typography variant="body2" color="text.secondary" sx={{ marginTop: "10px" }}>
-                                        {item.description}
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <ReadButtonDiv>
-                                <ReadButton>Read More
-                                    <ReadIcon src='\Assets\BlogIcons\right.png' />
-                                </ReadButton>
-                            </ReadButtonDiv>
-                        </Card>
-                    ))}
-                </CardSection>
-                <PaginationSec>
-                    <Stack spacing={2}>
-                        <Pagination
-                            onChange={handlePageChange}
-                            count={totalPages}
-                            page={page}
-                            variant="outlined"
-                            color="primary"
-                        />
-                    </Stack>
-                </PaginationSec>
+                            </Stack>
+                        </PaginationSec>
+                    </>
+                )}
             </Container>
         </>
     );
 };
 
 export default Page3;
-
 const Container = styled.div`
+     /* margin-top: 20px; */
     font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif";
 `;
 
-const Main = styled.div`
-    background-color: aquamarine;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const Heading = styled.h1``;
-
-const Paragraph = styled.p``;
-
 const CardSection = styled.div`
-    margin-top: 15px;
+    margin-top: 100px;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -198,28 +233,30 @@ const LinkSection = styled.div`
 `;
 
 const AuthorLink = styled.div`
+
     display: flex;
     gap: 5px;
 `;
 
 const AuthorIcon = styled.img`
-    height: 18px;
+   height: 17px;
     width: 18px;
 `;
 
 const AuthLink = styled.a`
-    margin-top: 3px;
+    margin-top: 1px;
     text-decoration: none;
     color: black;
 `;
 
 const ClockLink = styled.div`
-    margin-top: 2px;
+    /* margin-top: 2px; */
     display: flex;
     gap: 5px;
 `;
 
 const ClockIcon = styled.img`
+    /* margin-top: 5px; */
     height: 15px;
     width: 15px;
 `;
@@ -230,12 +267,13 @@ const CLink = styled.a`
 `;
 
 const CommentLink = styled.div`
-    margin-top: 2px;
+    /* margin-top: 2px; */
     display: flex;
     gap: 5px;
 `;
 
 const CommentIcon = styled.img`
+    /* margin-top: 5px; */
     height: 15px;
     width: 15px;
 `;
@@ -273,4 +311,149 @@ const PaginationSec = styled.div`
     margin-top: 30px;
     display: flex;
     justify-content: center;
+`;
+
+const ReadMoreSec = styled.div`
+    background-color: antiquewhite;
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+`;
+
+const HideSecImg = styled.img`
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+`;
+
+const ReadImgDiv = styled.div`
+    margin: auto;
+    width: 90%;
+`;
+
+const ReviewButton = styled.button`
+    background-color: dodgerblue;
+    color: white;
+    width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 20px;
+`;
+
+const HeadingDiv = styled.div`
+    margin-left: 20px;
+    margin-top: 10px;
+`;
+
+const HeadingReadMore = styled.h1``;
+
+const DescriptionDiv = styled.div`
+    margin-left: 20px;
+    margin-top: 20px;
+`;
+
+const DesHeading = styled.h2``;
+
+const DesPara = styled.p`
+    margin-top: 8px;
+`;
+
+// const PostCommentPage = styled.div`
+//     background-color: aliceblue;
+//     width: 80%;
+//     margin: 30px auto 0;
+// `;
+
+// const ReplyHeading = styled.h3`
+//     padding-top: 20px;
+//     margin-left: 20px;
+// `;
+
+// const RepPara = styled.p`
+//     margin-top: 10px;
+//     margin-left: 20px;
+// `;
+
+
+
+const HideLinkSection = styled.div`
+    display: flex;
+    gap: 10px;
+`;
+
+const HideAuthorLink = styled.div`
+    display: flex;
+    gap: 5px;
+`;
+
+const HideAuthorIcon = styled.img`
+    margin-top: 5px;
+    height: 18px;
+    width: 18px;
+`;
+
+const HideAuthLink = styled.a`
+    margin-top: 3px;
+    text-decoration: none;
+    color: black;
+`;
+
+const HideClockLink = styled.div`
+    margin-top: 2px;
+    display: flex;
+    gap: 5px;
+`;
+
+const HideClockIcon = styled.img`
+    margin-top: 5px;
+    height: 15px;
+    width: 15px;
+`;
+
+const HideCLink = styled.a`
+    text-decoration: none;
+    color: black;
+`;
+
+const HideCommentLink = styled.div`
+    margin-top: 2px;
+    display: flex;
+    gap: 5px;
+`;
+
+const HideCommentIcon = styled.img`
+    margin-top: 5px;
+    height: 15px;
+    width: 15px;
+`;
+
+const HideComLink = styled.a`
+    text-decoration: none;
+    color: black;
+`;
+
+
+const BackButtonDiv = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 30px;
+`;
+
+const BackButton = styled.button`
+background-color: dodgerblue;
+color: white;
+height: 30px;
+width: 120px;
+outline: none;
+border: none;
+`;
+
+const CardDesDiv=styled.div`
+height: 200px;
+width: 100%;
 `;
