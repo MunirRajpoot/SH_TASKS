@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 }
 
 const Children = styled.div`
-margin-top: 65px;
+margin-top: 64px;
 
 `;
 

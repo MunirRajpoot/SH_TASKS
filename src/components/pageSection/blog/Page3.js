@@ -180,11 +180,11 @@ const Page3 = () => {
                                                     <ComLink href='#'>Message</ComLink>
                                                 </CommentLink>
                                             </LinkSection>
-                                           <CardDesDiv>
-                                           <Typography  variant="body2" color="text.secondary" sx={{ marginTop: "10px" }}>
-                                                {item.description}
-                                            </Typography>
-                                           </CardDesDiv>
+                                            <CardDesDiv>
+                                                <Typography variant="body2" color="text.secondary" sx={{ marginTop: "10px" }}>
+                                                    {item.description}
+                                                </Typography>
+                                            </CardDesDiv>
                                         </CardContent>
                                     </CardActionArea>
                                     <ReadButtonDiv>
@@ -453,7 +453,7 @@ outline: none;
 border: none;
 `;
 
-const CardDesDiv=styled.div`
+const CardDesDiv = styled.div`
 height: 200px;
 width: 100%;
 `;

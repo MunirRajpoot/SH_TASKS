@@ -16,12 +16,15 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
 import ROUTES from "@/utils/ROUTES";
+
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
 
@@ -99,7 +102,7 @@ export default function ResponsiveDrawerAppBar(props) {
             <AppBar
                 component="nav"
                 sx={{
-                    backgroundColor: "#333533",
+                    backgroundColor: "#212529",
                     fontFamily: '"Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif"',
                 }}
             >
@@ -114,13 +117,15 @@ export default function ResponsiveDrawerAppBar(props) {
                         <MenuIcon />
                     </IconButton>
 
-                    <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+                    <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1, }}>
                         <Avatar
                             alt="Logo"
-                            src="/path-to-your-logo.png"
+                            src="\Assets\logo_MR.webp"
                             sx={{
-                                width: 40,
-                                height: 40,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                width: 45,
+                                height: 45,
                                 mr: 2,
                                 display: { xs: "none", md: "block" },
                             }}
@@ -137,7 +142,15 @@ export default function ResponsiveDrawerAppBar(props) {
                             {navItems.map((item) => (
                                 <Button
                                     key={item.title}
-                                    sx={{ color: "#fff", ml: 2, fontWeight: "bold" }}
+                                    sx={{
+                                        color: "#fff",
+                                        ml: 2,
+                                        fontWeight: "bold",
+                                        '&:hover': {
+                                            color: '#ffa200',  // Change hover color here
+                                            backgroundColor: 'transparent', // Ensure background remains transparent
+                                        },
+                                    }}
                                     component={Link}
                                     href={item.link || "#"}
                                 >
@@ -145,16 +158,51 @@ export default function ResponsiveDrawerAppBar(props) {
                                 </Button>
                             ))}
                         </Box>
+
                     </Box>
 
                     {!isSmallScreen && (
                         <Box2>
-                            <ButtonLogin onClick={() => router.push(ROUTES.LOGIN_USER)}>
+
+
+                            <Stack spacing={2} direction="row">
+                                <Button
+                                    variant="text"
+                                    sx={{
+                                        color: "white",
+                                        transition: "color 0.3s ease-in-out", // Transition for the color
+                                        '&:hover': {
+                                            color: '#ffa200',  // Change hover color here
+                                        },
+                                    }}
+                                >
+                                    LogIn
+                                </Button>
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        backgroundColor: "#ffa200", // Initial background color
+                                        color: "white", // Ensure text color is white
+                                        transition: "background-color 0.3s ease-in-out, color 0.3s ease-in-out", // Transition for both color and background
+                                        '&:hover': {
+                                            color: '#ffa200',  // Change text color on hover
+                                           backgroundColor:"#ff9500", // Gradient background on hover
+                                            color:"white",
+                                            fontWeight:"bold"
+                                        },
+                                    }}
+                                >
+                                    SignUp
+                                </Button>
+                            </Stack>
+
+
+                            {/* <ButtonLogin onClick={() => router.push(ROUTES.LOGIN_USER)}>
                                 LogIn
                             </ButtonLogin>
                             <ButtonSignUp onClick={() => router.push(ROUTES.SIGNUP_USER)}>
                                 SignUp
-                            </ButtonSignUp>
+                            </ButtonSignUp> */}
                         </Box2>
                     )}
                 </Toolbar>
@@ -193,18 +241,26 @@ const Box2 = styled.div`
 const ButtonLogin = styled.button`
   width: 80px;
   height: 30px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+background-color: transparent;
+ outline: none;
   color: white;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   font-weight: bold;
   cursor: pointer;
-  border-radius: 4px;
+  /* border-radius: 4px; */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #ffa200
+  }
 `;
 
 const ButtonSignUp = styled.button`
   width: 80px;
   height: 30px;
-  background: transparent;
+  background-color: #ffa200;
   color: white;
   border: 1px solid white;
   font-weight: bold;
@@ -215,7 +271,7 @@ const ButtonSignUp = styled.button`
   &:hover,
   &:active,
   &:focus {
-    color: #ff7e5f;
+    color: white;
   }
 `;
 
